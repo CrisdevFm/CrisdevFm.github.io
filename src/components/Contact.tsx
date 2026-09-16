@@ -36,10 +36,10 @@ export default function Contact() {
 
   const contactMethods = [
     {
-      icon: "📧",
-      label: "Email",
-      value: "cristian.forero@slb.com",
-      href: "mailto:cristian.forero@slb.com",
+      icon: "�",
+      label: "CV",
+      value: "CV Español / English",
+      href: "/cv/",
     },
     {
       icon: "💼",

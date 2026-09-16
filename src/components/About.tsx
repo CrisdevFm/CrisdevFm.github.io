@@ -67,6 +67,19 @@ export default function About() {
                 <div className="text-gray-700">Colombia</div>
               </div>
             </div>
+
+            <div className="mt-8 bg-stone-100 rounded-xl border border-primary/20 p-5">
+              <p className="text-sm font-semibold text-primary mb-2">Hoja de vida</p>
+              <p className="text-gray-600 mb-4">
+                Guarda tus documentos actualizados en la carpeta pública y accede a ellos desde aquí.
+              </p>
+              <a
+                href="/cv/"
+                className="inline-flex items-center px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-dark transition-all"
+              >
+                Ver archivos CV
+              </a>
+            </div>
           </motion.div>
 
           {/* Avatar Animation */}

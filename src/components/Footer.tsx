@@ -13,18 +13,13 @@ export default function Footer() {
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/cristian-camilo-forero-murillo-768682211/",
       icon: "💼",
     },
     {
-      label: "Twitter",
-      href: "https://twitter.com",
-      icon: "🐦",
-    },
-    {
-      label: "Email",
-      href: "mailto:tu@email.com",
-      icon: "📧",
+      label: "CV",
+      href: "/cv/",
+      icon: "📄",
     },
   ];
 

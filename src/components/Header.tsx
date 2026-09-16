@@ -21,6 +21,7 @@ export default function Header() {
     { label: "Habilidades", href: "#skills" },
     { label: "Experiencia", href: "#experience" },
     { label: "Educación", href: "#education" },
+    { label: "CV", href: "#cv" },
     { label: "Proyectos", href: "#projects" },
     { label: "Contacto", href: "#contact" },
   ];

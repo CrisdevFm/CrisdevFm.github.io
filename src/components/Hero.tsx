@@ -85,6 +85,15 @@ export default function Hero() {
           >
             Contáctame
           </motion.a>
+
+          <motion.a
+            href="/cv/"
+            className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Hoja de Vida
+          </motion.a>
         </motion.div>
 
         <motion.div
@@ -110,11 +119,11 @@ export default function Hero() {
             💼
           </motion.a>
           <motion.a
-            href="mailto:cristian.forero@example.com"
+            href="/cv/"
             className="text-3xl hover:text-primary transition-colors"
             whileHover={{ scale: 1.2, rotate: 10 }}
           >
-            ✉️
+            📄
           </motion.a>
         </motion.div>
       </motion.div>

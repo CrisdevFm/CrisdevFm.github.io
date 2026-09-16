@@ -9,6 +9,7 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Certificates from "@/components/Certificates";
+import CVSection from "@/components/CVSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Education />
+      <CVSection />
       <Certificates />
       <Projects />
       <Contact />

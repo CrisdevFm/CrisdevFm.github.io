@@ -7,60 +7,64 @@ type SkillsProps = {
 };
 
 export default function Skills({ lang }: SkillsProps) {
-  const skills: Record<string, string[]> =
-    lang === "es"
-      ? {
-          SAP: [
-            "SAP ABAP",
-            "SAP S/4HANA",
-            "SAP BTP",
-            "SAP Fiori",
-            "SAP Workflow",
-            "SmartForms / Adobe Forms",
-          ],
-          "Desarrollo Backend": [
-            "ABAP OOP",
-            "Data Dictionary",
-            "BAPIs y BAdIs",
-            "SAP Workflow",
-            "SAP Fiori",
-            "Facturación electrónica",
-          ],
-          "Otros": [
-            "Linux",
-            "ISO/IEC 27001:2022",
-            "Ethical Hacking",
-            "Git",
-            "SQL",
-            "Cloud en aprendizaje",
-          ],
-        }
-      : {
-          SAP: [
-            "SAP ABAP",
-            "SAP S/4HANA",
-            "SAP BTP",
-            "SAP Fiori",
-            "SAP Workflow",
-            "SmartForms / Adobe Forms",
-          ],
-          "Backend Development": [
-            "ABAP OOP",
-            "Data Dictionary",
-            "BAPIs and BAdIs",
-            "SAP Workflow",
-            "SAP Fiori",
-            "Electronic invoicing",
-          ],
-          "Other": [
-            "Linux",
-            "ISO/IEC 27001:2022",
-            "Ethical Hacking",
-            "Git",
-            "SQL",
-            "Cloud learning path",
-          ],
-        };
+  const skillGroups = [
+    {
+      id: "sap",
+      label: { es: "SAP", en: "SAP" },
+      items: [
+        "SAP ABAP",
+        "SAP S/4HANA",
+        "SAP BTP",
+        "SAP Fiori",
+        "SAP Workflow",
+        "SmartForms / Adobe Forms",
+      ],
+    },
+    {
+      id: "backend",
+      label: { es: "Desarrollo Backend", en: "Backend Development" },
+      items:
+        lang === "es"
+          ? [
+              "ABAP OOP",
+              "Data Dictionary",
+              "BAPIs y BAdIs",
+              "SAP Workflow",
+              "SAP Fiori",
+              "Facturación electrónica",
+            ]
+          : [
+              "ABAP OOP",
+              "Data Dictionary",
+              "BAPIs and BAdIs",
+              "SAP Workflow",
+              "SAP Fiori",
+              "Electronic invoicing",
+            ],
+    },
+    {
+      id: "other",
+      label: { es: "Otros", en: "Other" },
+      items:
+        lang === "es"
+          ? [
+              "Linux",
+              "ISO/IEC 27001:2022",
+              "Ethical Hacking",
+              "Git",
+              "SQL",
+              "Cloud en aprendizaje",
+            ]
+          : [
+              "Linux",
+              "ISO/IEC 27001:2022",
+              "Ethical Hacking",
+              "Git",
+              "SQL",
+              "Cloud learning path",
+            ],
+    },
+  ];
 
   const courses =
     lang === "es"
@@ -145,20 +149,20 @@ export default function Skills({ lang }: SkillsProps) {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {Object.entries(skills).map(([category, items]) => (
+          {skillGroups.map((group) => (
             <motion.div
-              key={category}
+              key={group.id}
               className="bg-gray-50 p-8 rounded-lg border border-gray-300 hover:border-primary transition-all shadow-sm hover:shadow-md"
               variants={itemVariants}
               whileHover={{ y: -5, borderColor: "rgb(212, 175, 55)" }}
             >
               <h3 className="text-2xl font-bold text-primary mb-6">
-                {category}
+                {group.label[lang]}
               </h3>
               <div className="space-y-3">
-                {items.map((skill, index) => (
+                {group.items.map((skill, index) => (
                   <motion.div
-                    key={index}
+                    key={`${group.id}-${skill}`}
                     className="flex items-center gap-3"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}

@@ -119,6 +119,13 @@ export default function Hero() {
             💼
           </motion.a>
           <motion.a
+            href="mailto:ccforerom@gmail.com"
+            className="text-3xl hover:text-primary transition-colors"
+            whileHover={{ scale: 1.2, rotate: 10 }}
+          >
+            ✉️
+          </motion.a>
+          <motion.a
             href="/cv/"
             className="text-3xl hover:text-primary transition-colors"
             whileHover={{ scale: 1.2, rotate: 10 }}

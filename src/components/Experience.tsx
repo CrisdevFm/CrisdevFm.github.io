@@ -9,24 +9,24 @@ export default function Experience() {
       company: "SLB (Schlumberger)",
       period: "2023 - Presente",
       description:
-        "Desarrollo y mantenimiento de soluciones SAP ABAP. Implementación de reportes, integraciones de datos y herramientas de gestión empresarial.",
-      skills: ["SAP ABAP", "S/4HANA", "BTP", "RFC"],
+        "Desarrollo y soporte de soluciones empresariales orientadas a SAP, automatización de procesos y mejora continua de aplicaciones backend con foco en calidad, integridad y rendimiento.",
+      skills: ["SAP ABAP", "S/4HANA", "BTP", "Integración de datos"],
     },
     {
       title: "SAP ABAP Developer",
-      company: "Empresa SAP",
+      company: "Desarrollo SAP / proyectos de automatización",
       period: "2021 - 2023",
       description:
-        "Desarrollo de módulos SAP, reportes personalizados y automatización de procesos empresariales. Trabajo en optimización y mejora de sistemas.",
+        "Construcción de reportes, procesos transaccionales y soluciones ABAP con enfoque en funcionalidad, optimización y soporte a requerimientos de negocio.",
       skills: ["ABAP", "Fiori", "Data Dictionary", "BAPI"],
     },
     {
-      title: "Systems Engineer / IT Support",
-      company: "Empresa de Tecnología",
-      period: "2019 - 2021",
+      title: "Soporte TI / Ingeniería de sistemas",
+      company: "Proyectos y soporte tecnológico",
+      period: "2018 - 2021",
       description:
-        "Soporte técnico, administración de sistemas y primeras experiencias con développement SAP. Base sólida en infraestructura IT.",
-      skills: ["SAP GUI", "SQL", "Sistemas", "Redes"],
+        "Soporte técnico, atención a usuarios, administración básica de sistemas y primeras experiencias en entornos empresariales, con base sólida en infraestructura, análisis y resolución de problemas.",
+      skills: ["SAP GUI", "SQL", "Soporte", "Infraestructura"],
     },
   ];
 

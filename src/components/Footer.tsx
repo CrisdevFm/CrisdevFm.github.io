@@ -17,6 +17,11 @@ export default function Footer() {
       icon: "💼",
     },
     {
+      label: "Email",
+      href: "mailto:ccforerom@gmail.com",
+      icon: "📧",
+    },
+    {
       label: "CV",
       href: "/cv/",
       icon: "📄",

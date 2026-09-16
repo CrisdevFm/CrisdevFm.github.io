@@ -36,7 +36,13 @@ export default function Contact() {
 
   const contactMethods = [
     {
-      icon: "�",
+      icon: "📧",
+      label: "Email",
+      value: "ccforerom@gmail.com",
+      href: "mailto:ccforerom@gmail.com",
+    },
+    {
+      icon: "📄",
       label: "CV",
       value: "CV Español / English",
       href: "/cv/",

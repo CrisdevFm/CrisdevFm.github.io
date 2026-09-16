@@ -1,36 +1,52 @@
 # 📁 Estructura del Proyecto
 
 ```
-CristianForeroWP/
-├── public/                    # Archivos estáticos
+CrisdevFm.github.io/
+├── .github/
+│   └── workflows/
+│       └── nextjs.yml        # Workflow de despliegue a GitHub Pages
+├── public/                    # Archivos estáticos públicos
+│   ├── certificates/         # Certificados PDF o imágenes
+│   ├── certificates.json     # Lista estática de certificados
+│   ├── cv/                   # Carpeta de CVs para descarga/visualización
+│   │   ├── CV_Cristian_Forero_Murillo.pdf
+│   │   ├── CV_Cristian_Forero_Murillo_EN.pdf
+│   │   ├── index.html
+│   │   └── README.txt
+│   └── ...
+├── scripts/
+│   └── generate-certificates.js  # Genera manifest para certificados
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx         # Layout raíz
-│   │   ├── page.tsx           # Página principal
-│   │   ├── globals.css        # Estilos globales
-│   ├── components/            # Componentes reutilizables
-│   │   ├── Header.tsx         # Navegación
-│   │   ├── Hero.tsx           # Sección hero
-│   │   ├── About.tsx          # Sobre mí
-│   │   ├── Skills.tsx         # Habilidades
-│   │   ├── Experience.tsx     # Experiencia laboral
-│   │   ├── Education.tsx      # Educación
-│   │   ├── Projects.tsx       # Proyectos (conectado a GitHub)
-│   │   ├── Contact.tsx        # Formulario de contacto
-│   │   └── Footer.tsx         # Pie de página
-├── .eslintrc.json             # ESLint config
+│   │   ├── api/              # Rutas API del proyecto
+│   │   ├── globals.css      # Estilos globales
+│   │   ├── layout.tsx       # Layout raíz
+│   │   └── page.tsx         # Página principal
+│   └── components/
+│       ├── About.tsx        # Sobre mí
+│       ├── Certificates.tsx # Sección de certificados
+│       ├── Contact.tsx      # Contacto y enlaces
+│       ├── CVSection.tsx    # Sección de hojas de vida
+│       ├── Education.tsx    # Educación con timeline
+│       ├── Experience.tsx   # Experiencia laboral con timeline
+│       ├── Footer.tsx       # Pie de página
+│       ├── Header.tsx      # Navegación sticky
+│       ├── Hero.tsx        # Presentación principal
+│       ├── Projects.tsx    # Proyectos desde GitHub
+│       └── Skills.tsx      # Habilidades técnicas
+├── .env.example               # Variables de entorno de ejemplo
+├── .eslintrc.json             # ESLint
 ├── .gitignore                 # Git ignore
-├── .env.example               # Variables de entorno ejemplo
-├── eslint.config.mjs          # ESLint MJS config
-├── next.config.ts             # Configuración de Next.js
-├── postcss.config.js          # Configuración de PostCSS
-├── tailwind.config.ts         # Configuración de Tailwind
-├── tsconfig.json              # Configuración de TypeScript
-├── package.json               # Dependencias del proyecto
-├── README.md                  # Documentación principal
-├── SETUP.md                   # Guía de instalación
-└── PROJECT_STRUCTURE.md       # Este archivo
-
+├── .nojekyll                  # Evita tratamiento de Jekyll
+├── next-env.d.ts              # Next.js env types
+├── next.config.js             # Configuración de Next.js export static
+├── package.json               # Dependencias y scripts
+├── postcss.config.js          # PostCSS
+├── README.md                  # Documentación principal del proyecto
+├── tailwind.config.ts         # Tailwind config
+├── tsconfig.json              # TS config
+├── PROJECT_STRUCTURE.md       # Este archivo
+└── ...
 ```
 
 ## 📦 Dependencias principales
@@ -50,60 +66,62 @@ CristianForeroWP/
 
 ### 1. **Header** (`Header.tsx`)
 - Navegación sticky
-- Efecto blur cuando haces scroll
+- Enlaces rápidos a cada sección
 - Botón directo a GitHub
-- Enlaces a cada sección
 
 ### 2. **Hero** (`Hero.tsx`)
 - Presentación principal
-- Animaciones de fondo fluidas
-- Botones de CTA (Call to Action)
-- Enlaces a redes sociales
+- CTA con acceso rápido a proyectos y contacto
+- Enlaces útiles a GitHub, LinkedIn y CV
 
 ### 3. **About** (`About.tsx`)
-- Descripción personal
-- Puntos clave sobre ti
-- Avatar animado
+- Descripción del perfil profesional
+- Información relevante de la trayectoria
+- Sección de acceso rápido a la hoja de vida
 
 ### 4. **Skills** (`Skills.tsx`)
-- Habilidades organizadas por categoría
-- Grid responsivo
-- Animaciones al scroll
+- Habilidades agrupadas por categoría
+- Enfoque SAP, backend y herramientas
 
 ### 5. **Experience** (`Experience.tsx`)
 - Timeline de experiencia laboral
-- Conecta experiencias visualmente
-- Habilidades por trabajo
+- Puestos principales y responsabilidades
 
 ### 6. **Education** (`Education.tsx`)
-- Educación formal
-- Cursos y certificaciones
-- Diseño de tarjetas
+- Timeline con colegio, universidad y formación continua
+- Estructura cronológica clara
 
-### 7. **Projects** (`Projects.tsx`) ⭐ **PUNTO CLAVE**
+### 7. **CVSection** (`CVSection.tsx`)
+- Acceso directo a las hojas de vida en español e inglés
+- Botones para abrir o descargar PDF
+
+### 8. **Certificates** (`Certificates.tsx`)
+- Muestra certificados desde `public/certificates.json`
+- Renderiza tarjetas con acceso directo a cada documento
+
+### 9. **Projects** (`Projects.tsx`)
 - Conectado a GitHub API
-- Trae automáticamente tus repositorios
-- Muestra stars, lenguaje y topics
-- Enlace directo al repositorio
+- Muestra repositorios destacados
+- Enlaces al perfil y repositorios
 
-### 8. **Contact** (`Contact.tsx`)
-- Métodos de contacto (email, LinkedIn, GitHub, WhatsApp)
-- Formulario para mensajes (lista para integrar servicio de email)
-- Validación básica
+### 10. **Contact** (`Contact.tsx`)
+- Información de contacto real
+- Email personal, CV, LinkedIn y GitHub
+- Formulario listo para integración posterior
 
-### 9. **Footer** (`Footer.tsx`)
+### 11. **Footer** (`Footer.tsx`)
 - Enlaces rápidos
 - Redes sociales
-- Información de copyright
+- Copyright del sitio
 
 ## 🎨 Sistema de Colores
 
 ```
-Primary: #00d4ff (Cyan brillante)
-Accent: #ff006e (Rosa/Magenta)
+Primary: #00d4ff
+Accent: #ff006e
 Dark: #0a0e27
 Darker: #050a1a
-Background: Gradiente dark
+Background: tonos oscuros con acentos azules y rosas
 ```
 
 ## 🔧 Configuración importante
@@ -138,19 +156,18 @@ Personalizado en `tailwind.config.ts`:
    npm start
    ```
 
-3. **Deployment**
-   - Vercel (Recomendado): Conecta tu GitHub y listo
-   - GitHub Pages: Usa `output: 'export'` en next.config.ts
+3. **Despliegue en GitHub Pages**
+   - Se usa el workflow de GitHub Actions
+   - La app se despliega desde la salida estática de Next
+   - GitHub Pages debe apuntar a `GitHub Actions`
 
 ## 📝 Cómo editar cada sección
 
-### Actualizar nombre y descripción
-Edita `src/components/Hero.tsx`:
-```typescript
-<motion.h1 className="text-5xl md:text-7xl font-bold mb-4 glow-text">
-  Hola, soy TU_NOMBRE_AQUI
-</motion.h1>
-```
+### Actualizar CVs
+Coloca tus PDFs dentro de `public/cv/` y la página los mostrará automáticamente.
+
+### Agregar certificados
+Actualiza la carpeta `public/certificates/` y/o el archivo `public/certificates.json`.
 
 ### Cambiar información de contacto
 Edita `src/components/Contact.tsx`:
@@ -159,60 +176,33 @@ const contactMethods = [
   {
     icon: "📧",
     label: "Email",
-    value: "TU_EMAIL@AQUI.COM",
-    href: "mailto:TU_EMAIL@AQUI.COM",
+    value: "ccforerom@gmail.com",
+    href: "mailto:ccforerom@gmail.com",
   },
-  // ... más contactos
 ];
-```
-
-### Agregar/modificar habilidades
-Edita `src/components/Skills.tsx`:
-```typescript
-const skills = {
-  "Frontend": [
-    "React",
-    "TU_HABILIDAD_AQUI",
-    // ...
-  ],
-  // ... más categorías
-};
 ```
 
 ### Cambiar experiencia laboral
-Edita `src/components/Experience.tsx`:
-```typescript
-const experiences = [
-  {
-    title: "Tu Puesto",
-    company: "Tu Empresa",
-    period: "2023 - 2024",
-    // ...
-  },
-];
-```
+Edita `src/components/Experience.tsx` con los puestos y fechas reales.
+
+### Cambiar educación
+Edita `src/components/Education.tsx` con universidad, colegio y certificaciones.
 
 ## 🌐 URLs Importantes
 
-- **GitHub username**: Reemplaza en Projects.tsx
-- **Email**: Actualiza en Contact.tsx y Hero.tsx
-- **LinkedIn**: Agrega URL en Contact.tsx y Footer.tsx
-- **Redes sociales**: Actualiza en Footer.tsx y Hero.tsx
+- **GitHub**: `https://github.com/crisdevfm`
+- **LinkedIn**: `https://www.linkedin.com/in/cristian-camilo-forero-murillo-768682211/`
+- **Email personal**: `ccforerom@gmail.com`
+- **CVs**: `public/cv/`
+- **Certificados**: `public/certificates/`
 
 ## ⚡ Performance
 
-- ✅ Next.js 14 App Router (más rápido)
-- ✅ Server Components donde es posible
-- ✅ Optimización de imágenes
-- ✅ Lazy loading de componentes
-- ✅ CSS optimizado con Tailwind
-
-## 🔐 Variables de entorno
-
-Ver `.env.example` para configuraciones opcionales:
-- GitHub username (automático si no configuras)
-- Email service (para formulario de contacto)
-- Otras URLs y API keys
+- ✅ Next.js 14
+- ✅ App Router
+- ✅ Exportación estática compatible con GitHub Pages
+- ✅ Archivos públicos para CV y certificados
+- ✅ Diseño responsivo con Tailwind
 
 ---
 

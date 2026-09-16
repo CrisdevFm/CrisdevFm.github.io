@@ -15,11 +15,15 @@ export default function Certificates() {
   useEffect(() => {
     const fetchCertificates = async () => {
       try {
-        const response = await fetch("/api/certificates");
+        const response = await fetch("/certificates.json");
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
         const data = await response.json();
         setCertificates(data);
       } catch (error) {
         console.error("Error fetching certificates:", error);
+        setCertificates([]);
       } finally {
         setLoading(false);
       }

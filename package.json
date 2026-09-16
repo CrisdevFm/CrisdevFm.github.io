@@ -4,8 +4,9 @@
   "description": "Interactive portfolio and CV for Cristian Forero",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "generate:certificates": "node scripts/generate-certificates.js",
+    "dev": "npm run generate:certificates && next dev",
+    "build": "npm run generate:certificates && next build",
     "start": "next start",
     "lint": "next lint"
   },

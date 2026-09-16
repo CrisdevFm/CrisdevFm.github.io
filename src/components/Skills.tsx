@@ -2,33 +2,108 @@
 
 import { motion } from "framer-motion";
 
-export default function Skills() {
-  const skills = {
-    "SAP": [
-      "SAP ABAP",
-      "SAP S/4HANA",
-      "SAP BTP",
-      "SAP Fiori",
-      "SAP Workflow",
-      "SmartForms / Adobe Forms",
-    ],
-    "Backend Development": [
-      "ABAP OOP",
-      "Data Dictionary",
-      "BAPIs y BAdIs",
-      "Integración entre sistemas",
-      "Automatización de procesos",
-      "Facturación electrónica",
-    ],
-    "Otros": [
-      "Linux",
-      "ISO/IEC 27001:2022",
-      "Ethical Hacking",
-      "Git",
-      "SQL",
-      "Cloud en aprendizaje",
-    ],
-  };
+type SkillsProps = {
+  lang: "es" | "en";
+};
+
+export default function Skills({ lang }: SkillsProps) {
+  const skills: Record<string, string[]> =
+    lang === "es"
+      ? {
+          SAP: [
+            "SAP ABAP",
+            "SAP S/4HANA",
+            "SAP BTP",
+            "SAP Fiori",
+            "SAP Workflow",
+            "SmartForms / Adobe Forms",
+          ],
+          "Desarrollo Backend": [
+            "ABAP OOP",
+            "Data Dictionary",
+            "BAPIs y BAdIs",
+            "Integración entre sistemas",
+            "Automatización de procesos",
+            "Facturación electrónica",
+          ],
+          "Otros": [
+            "Linux",
+            "ISO/IEC 27001:2022",
+            "Ethical Hacking",
+            "Git",
+            "SQL",
+            "Cloud en aprendizaje",
+          ],
+        }
+      : {
+          SAP: [
+            "SAP ABAP",
+            "SAP S/4HANA",
+            "SAP BTP",
+            "SAP Fiori",
+            "SAP Workflow",
+            "SmartForms / Adobe Forms",
+          ],
+          "Backend Development": [
+            "ABAP OOP",
+            "Data Dictionary",
+            "BAPIs and BAdIs",
+            "System integration",
+            "Process automation",
+            "Electronic invoicing",
+          ],
+          "Other": [
+            "Linux",
+            "ISO/IEC 27001:2022",
+            "Ethical Hacking",
+            "Git",
+            "SQL",
+            "Cloud learning path",
+          ],
+        };
+
+  const courses =
+    lang === "es"
+      ? [
+        "WEBINAR JOULE FOR DEVELOPERS",
+        "Master SAP Workflow On-Premise",
+        "SAP_ABAP_RESTful_Iniciación",
+        "SAP UI5 - SAP ABAS",
+        "SAP ABAP Fiori Administración",
+        "Auditor líder ISO 27001",
+        "Curso Ethical Hacking / Red Team 3ra edición - Hacker Mentor",
+        "Fundamentos de ciberseguridad",
+        "Fundamentos de la ciberseguridad para profesionales IT",
+        "Fundamentos de la ciberseguridad: Sistemas operativos",
+        "Gestión de riesgos de seguridad para empresas",
+        "Ingeniería social para IT",
+        "Fundamentos de la ciberseguridad: Redes",
+        "Primeros pasos con Secure Socket Layer (SSL)",
+        "Seguridad informática: Investigación y respuesta",
+        "Conviértete en especialista en seguridad de la información",
+        "Seguridad informática: Informática forense",
+        "Transformación digital: El rol del CTO",
+      ]
+      : [
+        "WEBINAR JOULE FOR DEVELOPERS",
+        "Master SAP Workflow On-Premise",
+        "SAP_ABAP_RESTful_Introduction",
+        "SAP UI5 - SAP ABAS",
+        "SAP ABAP Fiori Administration",
+        "ISO 27001 Lead Auditor",
+        "Ethical Hacking / Red Team Course 3rd Edition - Hacker Mentor",
+        "Cybersecurity Fundamentals",
+        "Cybersecurity Fundamentals for IT Professionals",
+        "Cybersecurity Fundamentals: Operating Systems",
+        "Security Risk Management for Businesses",
+        "Social Engineering for IT",
+        "Cybersecurity Fundamentals: Networks",
+        "Getting Started with Secure Socket Layer (SSL)",
+        "IT Security: Investigation and Response",
+        "Become a Specialist in Information Security",
+        "IT Security: Computer Forensics",
+        "Digital Transformation: The CTO Role",
+      ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,7 +135,7 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Habilidades Técnicas
+          {lang === "es" ? "Habilidades Técnicas" : "Technical Skills"}
         </motion.h2>
 
         <motion.div
@@ -99,14 +174,34 @@ export default function Skills() {
                         delay: index * 0.1,
                       }}
                     />
-                    <span className="text-gray-700 font-medium">
-                      {skill}
-                    </span>
+                    <span className="text-gray-700 font-medium">{skill}</span>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-14"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-6">
+            {lang === "es" ? "Cursos y certificaciones" : "Courses and certifications"}
+          </h3>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {courses.map((course, index) => (
+              <span
+                key={index}
+                className="px-3 py-2 bg-white border border-primary/20 text-gray-700 rounded-full text-sm shadow-sm"
+              >
+                {course}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

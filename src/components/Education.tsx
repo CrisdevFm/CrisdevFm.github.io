@@ -2,27 +2,59 @@
 
 import { motion } from "framer-motion";
 
-export default function Education() {
-  const education = [
-    {
-      degree: "Ingeniería de Sistemas",
-      school: "Universidad de San Buenaventura, Bogotá",
-      year: "2019 – 2024",
-      description: "Formación universitaria en ingeniería de sistemas con base sólida en software, tecnologías de información, análisis, programación y solución de problemas empresariales.",
-    },
-    {
-      degree: "Inglés Intermedio",
-      school: "Universidad de San Buenaventura, Bogotá",
-      year: "2019 – 2024",
-      description: "Nivel B1.2 – B2, enfocado en lectura, escritura, conversación y comprensión técnica en contextos profesionales.",
-    },
-    {
-      degree: "Formación complementaria SAP ABAP y tecnologías asociadas",
-      school: "Logali Group y SAP Learning",
-      year: "2022 – 2026",
-      description: "Capacitación en ALV, Fiori, Dynpro, RESTful, SAP Workflow On-Premise, SAP UI5, Web Dynpro y temas relevantes del ecosistema SAP.",
-    },
-  ];
+type EducationProps = {
+  lang: "es" | "en";
+};
+
+export default function Education({ lang }: EducationProps) {
+  const education =
+    lang === "es"
+      ? [
+          {
+            degree: "Ingeniería de Sistemas",
+            school: "Universidad de San Buenaventura, Bogotá",
+            year: "2019 – 2024",
+            description:
+              "Formación universitaria en ingeniería de sistemas con base sólida en software, tecnologías de información, análisis, programación y solución de problemas empresariales.",
+          },
+          {
+            degree: "Inglés Intermedio",
+            school: "Universidad de San Buenaventura, Bogotá",
+            year: "2019 – 2024",
+            description:
+              "Nivel B1.2 – B2, enfocado en lectura, escritura, conversación y comprensión técnica en contextos profesionales.",
+          },
+          {
+            degree: "Formación complementaria SAP ABAP y tecnologías asociadas",
+            school: "Logali Group y SAP Learning",
+            year: "2022 – 2026",
+            description:
+              "Capacitación en ALV, Fiori, Dynpro, RESTful, SAP Workflow On-Premise, SAP UI5, Web Dynpro y temas relevantes del ecosistema SAP.",
+          },
+        ]
+      : [
+          {
+            degree: "Systems Engineering",
+            school: "Universidad de San Buenaventura, Bogotá",
+            year: "2019 – 2024",
+            description:
+              "University training in systems engineering with a solid foundation in software, information technologies, analysis, programming, and enterprise problem solving.",
+          },
+          {
+            degree: "Intermediate English",
+            school: "Universidad de San Buenaventura, Bogotá",
+            year: "2019 – 2024",
+            description:
+              "B1.2 – B2 level, focused on reading, writing, conversation, and technical comprehension in professional contexts.",
+          },
+          {
+            degree: "Complementary SAP ABAP training and related technologies",
+            school: "Logali Group and SAP Learning",
+            year: "2022 – 2026",
+            description:
+              "Training in ALV, Fiori, Dynpro, RESTful, SAP Workflow On-Premise, SAP UI5, Web Dynpro, and key topics in the SAP ecosystem.",
+          },
+        ];
 
   return (
     <section id="education" className="py-20 px-4 bg-gray-50">
@@ -34,7 +66,7 @@ export default function Education() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Educación
+          {lang === "es" ? "Educación" : "Education"}
         </motion.h2>
 
         <div className="relative pl-0 md:pl-6">

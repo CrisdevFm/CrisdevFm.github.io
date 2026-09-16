@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export default function Contact() {
+type ContactProps = {
+  lang: "es" | "en";
+};
+
+export default function Contact({ lang }: ContactProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +29,6 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí irá la integración con un servicio de email
     console.log("Form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
@@ -34,44 +37,47 @@ export default function Contact() {
     }, 3000);
   };
 
-  const contactMethods = [
-    {
-      icon: "�",
-      label: "Ubicación",
-      value: "Bogotá, Colombia",
-      href: "https://maps.google.com/?q=Bogota+Colombia",
-    },
-    {
-      icon: "📧",
-      label: "Email",
-      value: "ccforerom@gmail.com",
-      href: "mailto:ccforerom@gmail.com",
-    },
-    {
-      icon: "📞",
-      label: "Teléfono",
-      value: "316 436 9023",
-      href: "tel:+573164369023",
-    },
-    {
-      icon: "📄",
-      label: "CV",
-      value: "CV Español / English",
-      href: "/cv/",
-    },
-    {
-      icon: "💼",
-      label: "LinkedIn",
-      value: "Cristian Camilo Forero Murillo",
-      href: "https://www.linkedin.com/in/cristian-camilo-forero-murillo-768682211/",
-    },
-    {
-      icon: "💻",
-      label: "GitHub",
-      value: "github.com/crisdevfm",
-      href: "https://github.com/crisdevfm",
-    },
-  ];
+  const contactMethods =
+    lang === "es"
+      ? [
+          { icon: "🌍", label: "Ubicación", value: "Bogotá, Colombia", href: "https://maps.google.com/?q=Bogota+Colombia" },
+          { icon: "📧", label: "Email", value: "ccforerom@gmail.com", href: "mailto:ccforerom@gmail.com" },
+          { icon: "📞", label: "Teléfono", value: "316 436 9023", href: "tel:+573164369023" },
+          { icon: "📄", label: "CV", value: "CV Español / English", href: "/cv/" },
+          { icon: "💼", label: "LinkedIn", value: "Cristian Camilo Forero Murillo", href: "https://www.linkedin.com/in/cristian-camilo-forero-murillo-768682211/" },
+          { icon: "💻", label: "GitHub", value: "github.com/crisdevfm", href: "https://github.com/crisdevfm" },
+        ]
+      : [
+          { icon: "🌍", label: "Location", value: "Bogotá, Colombia", href: "https://maps.google.com/?q=Bogota+Colombia" },
+          { icon: "📧", label: "Email", value: "ccforerom@gmail.com", href: "mailto:ccforerom@gmail.com" },
+          { icon: "📞", label: "Phone", value: "316 436 9023", href: "tel:+573164369023" },
+          { icon: "📄", label: "CV", value: "Spanish CV / English CV", href: "/cv/" },
+          { icon: "💼", label: "LinkedIn", value: "Cristian Camilo Forero Murillo", href: "https://www.linkedin.com/in/cristian-camilo-forero-murillo-768682211/" },
+          { icon: "💻", label: "GitHub", value: "github.com/crisdevfm", href: "https://github.com/crisdevfm" },
+        ];
+
+  const labels =
+    lang === "es"
+      ? {
+          title: "Contacto",
+          connect: "Conectemos",
+          name: "Nombre",
+          email: "Correo",
+          subject: "Asunto",
+          message: "Mensaje",
+          send: "Enviar mensaje",
+          sent: "Mensaje enviado con éxito",
+        }
+      : {
+          title: "Contact",
+          connect: "Let’s connect",
+          name: "Name",
+          email: "Email",
+          subject: "Subject",
+          message: "Message",
+          send: "Send message",
+          sent: "Message sent successfully",
+        };
 
   return (
     <section id="contact" className="py-20 px-4 bg-gray-50">
@@ -83,11 +89,10 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Contacto
+          {labels.title}
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Methods */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: -50 }}
@@ -96,7 +101,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-primary mb-8">
-              Conectemos
+              {labels.connect}
             </h3>
 
             {contactMethods.map((method, index) => (

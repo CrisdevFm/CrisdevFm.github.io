@@ -3,7 +3,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function Header() {
+type HeaderProps = {
+  lang: "es" | "en";
+  setLang: (lang: "es" | "en") => void;
+};
+
+export default function Header({ lang, setLang }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,16 +20,28 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Inicio", href: "#home" },
-    { label: "Sobre Mí", href: "#about" },
-    { label: "Habilidades", href: "#skills" },
-    { label: "Experiencia", href: "#experience" },
-    { label: "Educación", href: "#education" },
-    { label: "CV", href: "#cv" },
-    { label: "Proyectos", href: "#projects" },
-    { label: "Contacto", href: "#contact" },
-  ];
+  const navLinks =
+    lang === "es"
+      ? [
+          { label: "Inicio", href: "#home" },
+          { label: "Sobre Mí", href: "#about" },
+          { label: "Habilidades", href: "#skills" },
+          { label: "Experiencia", href: "#experience" },
+          { label: "Educación", href: "#education" },
+          { label: "CV", href: "#cv" },
+          { label: "Proyectos", href: "#projects" },
+          { label: "Contacto", href: "#contact" },
+        ]
+      : [
+          { label: "Home", href: "#home" },
+          { label: "About", href: "#about" },
+          { label: "Skills", href: "#skills" },
+          { label: "Experience", href: "#experience" },
+          { label: "Education", href: "#education" },
+          { label: "CV", href: "#cv" },
+          { label: "Projects", href: "#projects" },
+          { label: "Contact", href: "#contact" },
+        ];
 
   return (
     <motion.header
@@ -37,8 +54,7 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-3">
         <motion.div
           className="text-xl font-bold text-primary"
           whileHover={{ scale: 1.05 }}
@@ -46,7 +62,6 @@ export default function Header() {
           <a href="#home" className="font-semibold tracking-wider">CF</a>
         </motion.div>
 
-        {/* Navigation Links */}
         <div className="hidden md:flex gap-6">
           {navLinks.map((link, index) => (
             <motion.a
@@ -61,17 +76,27 @@ export default function Header() {
           ))}
         </div>
 
-        {/* GitHub Button */}
-        <motion.a
-          href="https://github.com/crisdevfm"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 bg-primary text-dark font-bold rounded-lg hover:bg-accent transition-all"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          GitHub
-        </motion.a>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setLang(lang === "es" ? "en" : "es")}
+            className="px-3 py-2 text-xs font-bold rounded-lg border border-primary text-primary bg-white/80 hover:bg-primary hover:text-white transition-all"
+            aria-label="Toggle language"
+          >
+            {lang === "es" ? "EN" : "ES"}
+          </button>
+
+          <motion.a
+            href="https://github.com/crisdevfm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-primary text-dark font-bold rounded-lg hover:bg-accent transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            GitHub
+          </motion.a>
+        </div>
       </nav>
     </motion.header>
   );

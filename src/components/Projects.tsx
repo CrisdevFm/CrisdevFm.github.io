@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+type ProjectsProps = {
+  lang: "es" | "en";
+};
+
 interface GitHubRepo {
   id: number;
   name: string;
@@ -15,7 +19,7 @@ interface GitHubRepo {
   archived?: boolean;
 }
 
-export default function Projects() {
+export default function Projects({ lang }: ProjectsProps) {
   const [projects, setProjects] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +27,6 @@ export default function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        // Reemplaza 'crisdevfm' con tu usuario de GitHub
         const response = await axios.get(
           "https://api.github.com/users/crisdevfm/repos",
           {
@@ -35,7 +38,6 @@ export default function Projects() {
           }
         );
 
-        // Filtrar repositorios válidos (con descripción y no archivados)
         const filteredRepos = response.data.filter(
           (repo: GitHubRepo) => repo.description && !(repo.archived ?? false)
         );
@@ -43,46 +45,15 @@ export default function Projects() {
         setProjects(filteredRepos);
       } catch (err) {
         console.error("Error fetching GitHub projects:", err);
-        setError("No se pudieron cargar los proyectos de GitHub");
-        // Mostrar proyectos de demostración si hay error
-        setProjects(demoProjects);
+        setError(lang === "es" ? "No se pudieron cargar los proyectos de GitHub" : "GitHub projects could not be loaded");
+        setProjects(getDemoProjects(lang));
       } finally {
         setLoading(false);
       }
     };
 
     fetchProjects();
-  }, []);
-
-  const demoProjects: GitHubRepo[] = [
-    {
-      id: 1,
-      name: "CrisdevFm.github.io",
-      description: "Portfolio interactivo personal",
-      html_url: "https://github.com/crisdevfm/crisdevfm.github.io",
-      stargazers_count: 5,
-      language: "TypeScript",
-      topics: ["portfolio", "nextjs", "tailwindcss"],
-    },
-    {
-      id: 2,
-      name: "E-Commerce Platform",
-      description: "Plataforma de comercio electrónico con carrito dinámico",
-      html_url: "#",
-      stargazers_count: 12,
-      language: "React",
-      topics: ["ecommerce", "react", "nodejs"],
-    },
-    {
-      id: 3,
-      name: "Task Manager App",
-      description: "Aplicación de gestión de tareas con autenticación",
-      html_url: "#",
-      stargazers_count: 8,
-      language: "Next.js",
-      topics: ["productivity", "full-stack", "mongodb"],
-    },
-  ];
+  }, [lang]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -114,7 +85,7 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Proyectos Destacados
+          {lang === "es" ? "Proyectos Destacados" : "Featured Projects"}
         </motion.h2>
 
         <motion.p
@@ -124,14 +95,14 @@ export default function Projects() {
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Algunos de mis proyectos recientes. Puedes ver más en mi{" "}
+          {lang === "es" ? "Algunos de mis proyectos recientes. Puedes ver más en mi" : "Some of my recent projects. You can find more on my"}{" "}
           <a
             href="https://github.com/crisdevfm"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:text-accent font-bold"
           >
-            perfil de GitHub
+            {lang === "es" ? "perfil de GitHub" : "GitHub profile"}
           </a>
           .
         </motion.p>
@@ -142,7 +113,7 @@ export default function Projects() {
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <p className="text-gray-700">Cargando proyectos...</p>
+            <p className="text-gray-700">{lang === "es" ? "Cargando proyectos..." : "Loading projects..."}</p>
           </motion.div>
         )}
 
@@ -176,7 +147,6 @@ export default function Projects() {
                 boxShadow: "0 0 30px rgba(212, 175, 55, 0.2)",
               }}
             >
-              {/* Header with stars */}
               <div className="flex items-start justify-between mb-4">
                 <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors flex-1">
                   {project.name}
@@ -186,12 +156,10 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Description */}
               <p className="text-gray-700 mb-4 text-sm line-clamp-2">
                 {project.description}
               </p>
 
-              {/* Language */}
               {project.language && (
                 <div className="flex items-center gap-2 mb-4">
                   <span
@@ -202,7 +170,6 @@ export default function Projects() {
                 </div>
               )}
 
-              {/* Topics/Tags */}
               {project.topics && project.topics.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {project.topics.slice(0, 3).map((topic) => (
@@ -216,13 +183,12 @@ export default function Projects() {
                 </div>
               )}
 
-              {/* Link indicator */}
               <motion.div
                 className="mt-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity"
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                Ver en GitHub →
+                {lang === "es" ? "Ver en GitHub →" : "View on GitHub →"}
               </motion.div>
             </motion.a>
           ))}
@@ -230,6 +196,38 @@ export default function Projects() {
       </div>
     </section>
   );
+}
+
+function getDemoProjects(lang: "es" | "en"): GitHubRepo[] {
+  return [
+    {
+      id: 1,
+      name: "CrisdevFm.github.io",
+      description: lang === "es" ? "Portfolio interactivo personal" : "Interactive personal portfolio",
+      html_url: "https://github.com/crisdevfm/crisdevfm.github.io",
+      stargazers_count: 5,
+      language: "TypeScript",
+      topics: ["portfolio", "nextjs", "tailwindcss"],
+    },
+    {
+      id: 2,
+      name: "E-Commerce Platform",
+      description: lang === "es" ? "Plataforma de comercio electrónico con carrito dinámico" : "E-commerce platform with dynamic shopping cart",
+      html_url: "#",
+      stargazers_count: 12,
+      language: "React",
+      topics: ["ecommerce", "react", "nodejs"],
+    },
+    {
+      id: 3,
+      name: "Task Manager App",
+      description: lang === "es" ? "Aplicación de gestión de tareas con autenticación" : "Task management app with authentication",
+      html_url: "#",
+      stargazers_count: 8,
+      language: "Next.js",
+      topics: ["productivity", "full-stack", "mongodb"],
+    },
+  ];
 }
 
 function getLanguageColor(language: string): string {

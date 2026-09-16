@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -14,6 +15,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [lang, setLang] = useState<"es" | "en">("es");
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -21,16 +24,16 @@ export default function Home() {
       transition={{ duration: 0.5 }}
       className="w-full"
     >
-      <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Education />
+      <Header lang={lang} setLang={setLang} />
+      <Hero lang={lang} />
+      <About lang={lang} />
+      <Skills lang={lang} />
+      <Experience lang={lang} />
+      <Education lang={lang} />
       <CVSection />
       <Certificates />
-      <Projects />
-      <Contact />
+      <Projects lang={lang} />
+      <Contact lang={lang} />
       <Footer />
     </motion.main>
   );

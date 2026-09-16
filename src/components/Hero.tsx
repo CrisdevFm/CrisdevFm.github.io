@@ -2,7 +2,32 @@
 
 import { motion } from "framer-motion";
 
-export default function Hero() {
+type HeroProps = {
+  lang: "es" | "en";
+};
+
+export default function Hero({ lang }: HeroProps) {
+  const content =
+    lang === "es"
+      ? {
+          headline: "Cristian Camilo Forero Murillo",
+          subtitle: "Ingeniero de Sistemas | Desarrollador SAP ABAP",
+          description:
+            "Ingeniero de Sistemas y Desarrollador SAP ABAP con experiencia en desarrollo, soporte y mejora continua de soluciones dentro del ecosistema SAP. Mi enfoque principal es SAP, con especial interés en SAP S/4HANA, SAP BTP, SAP Workflow y automatización de procesos empresariales.",
+          projects: "Ver Mis Proyectos",
+          contact: "Contáctame",
+          cv: "Hoja de Vida",
+        }
+      : {
+          headline: "Cristian Camilo Forero Murillo",
+          subtitle: "Systems Engineer | SAP ABAP Developer",
+          description:
+            "Systems Engineer and SAP ABAP Developer with experience in development, support, and continuous improvement of solutions in the SAP ecosystem. My main focus is SAP, with a strong interest in SAP S/4HANA, SAP BTP, SAP Workflow, and enterprise process automation.",
+          projects: "View My Projects",
+          contact: "Contact Me",
+          cv: "Resume",
+        };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,38 +53,44 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
-      {/* Fondo animado sutil */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Contenido */}
       <motion.div
         className="max-w-4xl mx-auto text-center px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
+        <motion.div
+          variants={itemVariants}
+          className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/5 text-primary font-semibold text-sm"
+        >
+          <span>⚙️</span>
+          <span>{lang === "es" ? "Perfil enfocado en SAP" : "SAP-focused profile"}</span>
+        </motion.div>
+
         <motion.h1
           variants={itemVariants}
           className="text-5xl md:text-7xl font-bold mb-4 text-primary"
         >
-          Cristian Camilo Forero Murillo
+          {content.headline}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="text-2xl md:text-3xl font-semibold text-primary mb-4"
         >
-          Ingeniero de Sistemas | Desarrollador SAP ABAP
+          {content.subtitle}
         </motion.p>
 
         <motion.p
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl"
         >
-          Ingeniero de Sistemas y Desarrollador SAP ABAP con experiencia en desarrollo, soporte y mejora continua de soluciones dentro del ecosistema SAP. Actualmente estoy ampliando mi perfil hacia SAP S/4HANA, SAP BTP y desarrollo Cloud.
+          {content.description}
         </motion.p>
 
         <motion.div
@@ -72,7 +103,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Ver Mis Proyectos
+            {content.projects}
           </motion.a>
 
           <motion.a
@@ -81,7 +112,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contáctame
+            {content.contact}
           </motion.a>
 
           <motion.a
@@ -90,7 +121,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Hoja de Vida
+            {content.cv}
           </motion.a>
         </motion.div>
 
@@ -133,7 +164,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Indicador de scroll */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

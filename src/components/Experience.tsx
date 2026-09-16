@@ -23,7 +23,7 @@ export default function Experience({ lang }: ExperienceProps) {
             company: "Just Time Consulting Group",
             period: "Enero 2025 – Julio 2026",
             description:
-              "Desarrollo y mantenimiento de reportes para seguimiento y control de procesos, integración de información entre sistemas, automatización de flujos de aprobación y notificación, soporte productivo, diseño de formularios, y participación en proyectos de facturación electrónica y nómina electrónica para distintos países.",
+              "Desarrollo y mantenimiento de reportes para seguimiento y control de procesos, integración de información entre sistemas, diseño de flujos de aprobación y notificación en SAP, soporte productivo, diseño de formularios, y participación en proyectos de facturación electrónica y nómina electrónica para distintos países.",
             skills: ["ABAP", "Integración", "Workflow", "Formularios", "Facturación electrónica"],
           },
           {
@@ -49,7 +49,7 @@ export default function Experience({ lang }: ExperienceProps) {
             company: "Just Time Consulting Group",
             period: "January 2025 – July 2026",
             description:
-              "Development and maintenance of reports for process tracking and control, information integration between systems, automation of approval and notification flows, production support, form design, and participation in electronic billing and payroll projects across different countries.",
+              "Development and maintenance of reports for process tracking and control, information integration between systems, design of approval and notification flows in SAP, production support, form design, and participation in electronic billing and payroll projects across different countries.",
             skills: ["ABAP", "Integration", "Workflow", "Forms", "Electronic billing"],
           },
           {

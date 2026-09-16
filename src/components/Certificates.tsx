@@ -8,9 +8,36 @@ interface Certificate {
   url: string;
 }
 
-export default function Certificates() {
+type CertificatesProps = {
+  lang: "es" | "en";
+};
+
+export default function Certificates({ lang }: CertificatesProps) {
   const [certificates, setCertificates] = useState<Certificate[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const labels =
+    lang === "es"
+      ? {
+          title: "Certificados SAP",
+          loading: "Cargando certificados...",
+          emptyTitle: "Certificados SAP",
+          emptyText: "📁 Copia tus certificados SAP a:",
+          emptySupport: "Formatos soportados: PDF, PNG, JPG, JPEG. Los certificados aparecerán automáticamente cuando los agregues. 🚀",
+          view: "Ver Certificado",
+          pdf: "Documento PDF",
+          image: "Imagen digital",
+        }
+      : {
+          title: "SAP Certificates",
+          loading: "Loading certificates...",
+          emptyTitle: "SAP Certificates",
+          emptyText: "📁 Copy your SAP certificates to:",
+          emptySupport: "Supported formats: PDF, PNG, JPG, JPEG. Certificates will appear automatically when you add them. 🚀",
+          view: "View Certificate",
+          pdf: "PDF document",
+          image: "Digital image",
+        };
 
   useEffect(() => {
     const fetchCertificates = async () => {
@@ -43,9 +70,9 @@ export default function Certificates() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Certificados SAP
+            {labels.title}
           </motion.h2>
-          <p className="text-center text-gray-600">Cargando certificados...</p>
+          <p className="text-center text-gray-600">{labels.loading}</p>
         </div>
       </section>
     );
@@ -62,7 +89,7 @@ export default function Certificates() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Certificados SAP
+            {labels.emptyTitle}
           </motion.h2>
           <motion.p
             className="text-gray-600 mb-4"
@@ -71,7 +98,7 @@ export default function Certificates() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            📁 Copia tus certificados SAP a:
+            {labels.emptyText}
           </motion.p>
           <motion.div
             className="bg-white p-6 rounded-lg border-2 border-primary/30 inline-block"
@@ -91,7 +118,7 @@ export default function Certificates() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Formatos soportados: PDF, PNG, JPG, JPEG. Los certificados aparecerán automáticamente cuando los agregues. 🚀
+            {labels.emptySupport}
           </motion.p>
         </div>
       </section>
@@ -108,7 +135,7 @@ export default function Certificates() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Certificados SAP
+          {labels.title}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,11 +176,11 @@ export default function Certificates() {
                 </h3>
 
                 <p className="text-sm text-gray-600 text-center mb-4">
-                  {isPDF ? "Documento PDF" : "Imagen digital"}
+                  {isPDF ? labels.pdf : labels.image}
                 </p>
 
                 <div className="flex items-center justify-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                  <span>Ver Certificado</span>
+                  <span>{labels.view}</span>
                   <span>→</span>
                 </div>
               </motion.a>

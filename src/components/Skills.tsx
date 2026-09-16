@@ -22,8 +22,8 @@ export default function Skills({ lang }: SkillsProps) {
             "ABAP OOP",
             "Data Dictionary",
             "BAPIs y BAdIs",
-            "Integración entre sistemas",
-            "Automatización de procesos",
+            "SAP Workflow",
+            "SAP Fiori",
             "Facturación electrónica",
           ],
           "Otros": [
@@ -48,8 +48,8 @@ export default function Skills({ lang }: SkillsProps) {
             "ABAP OOP",
             "Data Dictionary",
             "BAPIs and BAdIs",
-            "System integration",
-            "Process automation",
+            "SAP Workflow",
+            "SAP Fiori",
             "Electronic invoicing",
           ],
           "Other": [

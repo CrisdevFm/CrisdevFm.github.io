@@ -13,7 +13,7 @@ export default function Hero({ lang }: HeroProps) {
           headline: "Cristian Camilo Forero Murillo",
           subtitle: "Ingeniero de Sistemas | Desarrollador SAP ABAP",
           description:
-            "Ingeniero de Sistemas y Desarrollador SAP ABAP con experiencia en desarrollo, soporte y mejora continua de soluciones dentro del ecosistema SAP. Mi enfoque principal es SAP, con especial interés en SAP S/4HANA, SAP BTP, SAP Workflow y automatización de procesos empresariales.",
+            "Ingeniero de Sistemas y Desarrollador SAP ABAP con experiencia en desarrollo, soporte y mejora continua de soluciones dentro del ecosistema SAP. Mi enfoque principal es SAP, con especial interés en SAP ABAP, SAP S/4HANA, SAP BTP, SAP Workflow, SAP Fiori y el desarrollo relacionado con el entorno SAP.",
           projects: "Ver Mis Proyectos",
           contact: "Contáctame",
           cv: "Hoja de Vida",
@@ -22,7 +22,7 @@ export default function Hero({ lang }: HeroProps) {
           headline: "Cristian Camilo Forero Murillo",
           subtitle: "Systems Engineer | SAP ABAP Developer",
           description:
-            "Systems Engineer and SAP ABAP Developer with experience in development, support, and continuous improvement of solutions in the SAP ecosystem. My main focus is SAP, with a strong interest in SAP S/4HANA, SAP BTP, SAP Workflow, and enterprise process automation.",
+            "Systems Engineer and SAP ABAP Developer with experience in development, support, and continuous improvement of solutions in the SAP ecosystem. My main focus is SAP, with a strong interest in SAP ABAP, SAP S/4HANA, SAP BTP, SAP Workflow, SAP Fiori, and SAP-related development.",
           projects: "View My Projects",
           contact: "Contact Me",
           cv: "Resume",

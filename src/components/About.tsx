@@ -17,12 +17,12 @@ export default function About({ lang }: AboutProps) {
           paragraph1:
             "Me desenvuelvo con facilidad en proyectos de desarrollo, soporte y mejora continua, y disfruto entender el negocio detrás de cada requerimiento para proponer soluciones sólidas. Mi enfoque está en entregar valor real a procesos empresariales con calidad técnica y criterio funcional.",
           paragraph2:
-            "Actualmente amplío mi perfil hacia SAP S/4HANA, SAP BTP, SAP Workflow y desarrollo Cloud, con el objetivo de seguir creciendo dentro del ecosistema SAP y fortalecer mi capacidad para liderar soluciones más modernas y escalables.",
+            "Actualmente amplío mi perfil hacia SAP ABAP, SAP S/4HANA, SAP BTP, SAP Workflow y desarrollo SAP en general, con el objetivo de seguir creciendo dentro del ecosistema SAP y fortalecer mi capacidad para crear soluciones más modernas y escalables.",
           specialty: "Especialidad",
           industry: "Industria",
           company: "Empresa Actual",
           location: "Ubicación",
-          resume: "Hoja de vida",
+          resume: "CV",
           resumeText:
             "Accede a mis CV actualizados y documentos descargables desde esta sección.",
           button: "Ver archivos CV",
@@ -40,7 +40,7 @@ export default function About({ lang }: AboutProps) {
           industry: "Industry",
           company: "Current Company",
           location: "Location",
-          resume: "Resume",
+          resume: "CV",
           resumeText:
             "Access my updated CVs and downloadable documents from this section.",
           button: "View CV files",

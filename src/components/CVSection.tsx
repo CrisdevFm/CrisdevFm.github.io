@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 
+type CVSectionProps = {
+  lang: "es" | "en";
+};
+
 const cvFiles = [
   {
     lang: "Español",
@@ -17,7 +21,24 @@ const cvFiles = [
   },
 ];
 
-export default function CVSection() {
+export default function CVSection({ lang }: CVSectionProps) {
+  const labels =
+    lang === "es"
+      ? {
+          title: "Hoja de Vida",
+          description:
+            "Descarga o abre la versión actualizada de mi hoja de vida para conocer mi experiencia, perfil profesional y trayectoria.",
+          open: "Abrir PDF",
+          download: "Descargar",
+        }
+      : {
+          title: "Resume",
+          description:
+            "Download or open the latest version of my CV to learn about my experience, professional profile, and background.",
+          open: "Open PDF",
+          download: "Download",
+        };
+
   return (
     <section id="cv" className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -28,7 +49,7 @@ export default function CVSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Hoja de Vida
+          {labels.title}
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -43,10 +64,7 @@ export default function CVSection() {
             >
               <div className="text-sm font-semibold text-primary mb-3">{cv.lang}</div>
               <h3 className="text-2xl font-bold text-primary mb-4">{cv.title}</h3>
-              <p className="text-gray-700 mb-6">
-                Descarga o abre la versión actualizada de mi hoja de vida para conocer mi experiencia,
-                perfil profesional y trayectoria.
-              </p>
+              <p className="text-gray-700 mb-6">{labels.description}</p>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -55,14 +73,14 @@ export default function CVSection() {
                   rel="noopener noreferrer"
                   className={`inline-flex items-center justify-center px-5 py-3 rounded-lg font-bold transition-all ${cv.accent}`}
                 >
-                  Abrir PDF
+                  {labels.open}
                 </a>
                 <a
                   href={cv.href}
                   download
                   className="inline-flex items-center justify-center px-5 py-3 rounded-lg border border-gray-300 text-gray-700 font-bold hover:border-primary hover:text-primary transition-all"
                 >
-                  Descargar
+                  {labels.download}
                 </a>
               </div>
             </motion.div>

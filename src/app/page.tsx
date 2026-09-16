@@ -30,8 +30,8 @@ export default function Home() {
       <Skills lang={lang} />
       <Experience lang={lang} />
       <Education lang={lang} />
-      <CVSection />
-      <Certificates />
+      <CVSection lang={lang} />
+      <Certificates lang={lang} />
       <Projects lang={lang} />
       <Contact lang={lang} />
       <Footer />

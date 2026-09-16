@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 export default function Education() {
   const education = [
     {
-      degree: "Bachillerato / Educación media",
-      school: "Colegio",
-      year: "2008 - 2014",
-      description: "Formación básica y media con énfasis en competencias académicas, disciplina y preparación para la educación superior.",
+      degree: "Ingeniería de Sistemas",
+      school: "Universidad de San Buenaventura, Bogotá",
+      year: "2019 – 2024",
+      description: "Formación universitaria en ingeniería de sistemas con base sólida en software, tecnologías de información, análisis, programación y solución de problemas empresariales.",
     },
     {
-      degree: "Ingeniería en Sistemas",
-      school: "Universidad de San Buenaventura",
-      year: "2015 - 2021",
-      description: "Formación en ingeniería de software, redes, bases de datos, programación y solución de problemas empresariales.",
+      degree: "Inglés Intermedio",
+      school: "Universidad de San Buenaventura, Bogotá",
+      year: "2019 – 2024",
+      description: "Nivel B1.2 – B2, enfocado en lectura, escritura, conversación y comprensión técnica en contextos profesionales.",
     },
     {
-      degree: "Especialización SAP ABAP y tecnologías asociadas",
-      school: "SAP Learning / formación práctica",
-      year: "2021 - 2024",
-      description: "Fortalecimiento en ABAP, SAP S/4HANA, procesos empresariales, desarrollo de soluciones y automatización en entornos SAP.",
+      degree: "Formación complementaria SAP ABAP y tecnologías asociadas",
+      school: "Logali Group y SAP Learning",
+      year: "2022 – 2026",
+      description: "Capacitación en ALV, Fiori, Dynpro, RESTful, SAP Workflow On-Premise, SAP UI5, Web Dynpro y temas relevantes del ecosistema SAP.",
     },
   ];
 

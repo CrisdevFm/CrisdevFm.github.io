@@ -27,26 +27,19 @@ export default function About() {
           >
             <div className="border-l-4 border-accent pl-4">
               <p className="text-lg font-semibold text-primary mb-2">
-                Sobre Mi
+                Perfil Profesional
               </p>
               <p className="text-gray-600">
-                Ingeniero de Sistemas de la Universidad de San Buenaventura con especialización 
-                en desarrollo SAP ABAP. Actualmente trabajo como IT Back End Software Engineer en 
-                SLB (Schlumberger), líder mundial en servicios tecnológicos petroleros.
+                Ingeniero de Sistemas y Desarrollador SAP ABAP con experiencia construyendo y manteniendo soluciones dentro del ecosistema SAP, desde reportes y herramientas de gestión hasta integraciones entre sistemas y automatización de procesos de negocio.
               </p>
             </div>
 
             <p className="text-gray-600 leading-relaxed">
-              Mi experiencia incluye desarrollo y mantenimiento de soluciones empresariales dentro 
-              del ecosistema SAP, desde reportes complejos y herramientas de gestión de datos hasta 
-              integraciones de sistemas y automatización de procesos empresariales críticos.
+              Me desenvuelvo con facilidad en proyectos de desarrollo, soporte y mejora continua, y disfruto entender el negocio detrás de cada requerimiento para proponer soluciones sólidas. Mi enfoque está en entregar valor real a procesos empresariales con calidad técnica y criterio funcional.
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-              Actualmente expandiendo mis competencias en SAP S/4HANA, SAP BTP y desarrollo en la nube, 
-              con el objetivo de continuar creciendo como arquitecto de soluciones SAP. Mi principal 
-              fortaleza radica en entender el negocio detrás de cada requisito técnico para entregar 
-              soluciones que generen verdadero impacto empresarial.
+              Actualmente amplío mi perfil hacia SAP S/4HANA, SAP BTP y desarrollo Cloud, con el objetivo de seguir creciendo dentro del ecosistema SAP y fortalecer mi capacidad para liderar soluciones más modernas y escalables.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mt-6">

@@ -52,16 +52,14 @@ export default function Hero() {
           variants={itemVariants}
           className="text-2xl md:text-3xl font-semibold text-primary mb-4"
         >
-          SAP ABAP Developer | IT Back End Software Engineer
+          Ingeniero de Sistemas | Desarrollador SAP ABAP
         </motion.p>
 
         <motion.p
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl"
         >
-          Ingeniero de Sistemas especializado en soluciones empresariales SAP con experiencia 
-          en desarrollo ABAP, S/4HANA y arquitectura cloud. Enfocado en entregar soluciones 
-          robustas que generan valor empresarial.
+          Ingeniero de Sistemas y Desarrollador SAP ABAP con experiencia en desarrollo, soporte y mejora continua de soluciones dentro del ecosistema SAP. Actualmente estoy ampliando mi perfil hacia SAP S/4HANA, SAP BTP y desarrollo Cloud.
         </motion.p>
 
         <motion.div

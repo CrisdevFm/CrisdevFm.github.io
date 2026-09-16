@@ -36,10 +36,22 @@ export default function Contact() {
 
   const contactMethods = [
     {
+      icon: "�",
+      label: "Ubicación",
+      value: "Bogotá, Colombia",
+      href: "https://maps.google.com/?q=Bogota+Colombia",
+    },
+    {
       icon: "📧",
       label: "Email",
       value: "ccforerom@gmail.com",
       href: "mailto:ccforerom@gmail.com",
+    },
+    {
+      icon: "📞",
+      label: "Teléfono",
+      value: "316 436 9023",
+      href: "tel:+573164369023",
     },
     {
       icon: "📄",

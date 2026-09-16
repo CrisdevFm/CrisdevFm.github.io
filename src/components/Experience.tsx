@@ -5,28 +5,28 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
-      title: "IT Back End Software Engineer",
-      company: "SLB (Schlumberger)",
-      period: "2023 - Presente",
+      title: "IT Back End Software Engineer (Desarrollador ABAP)",
+      company: "Schlumberger",
+      period: "Julio 2026 – Actualidad",
       description:
-        "Desarrollo y soporte de soluciones empresariales orientadas a SAP, automatización de procesos y mejora continua de aplicaciones backend con foco en calidad, integridad y rendimiento.",
-      skills: ["SAP ABAP", "S/4HANA", "BTP", "Integración de datos"],
+        "Desarrollo de soluciones backend en SAP ABAP dentro de un entorno corporativo de gran escala, adaptándome a estándares, buenas prácticas y procesos de desarrollo propios de una organización multinacional.",
+      skills: ["SAP ABAP", "Backend", "Desarrollo corporativo", "Buenas prácticas"],
     },
     {
-      title: "SAP ABAP Developer",
-      company: "Desarrollo SAP / proyectos de automatización",
-      period: "2021 - 2023",
+      title: "Desarrollador Técnico ABAP",
+      company: "Just Time Consulting Group",
+      period: "Enero 2025 – Julio 2026",
       description:
-        "Construcción de reportes, procesos transaccionales y soluciones ABAP con enfoque en funcionalidad, optimización y soporte a requerimientos de negocio.",
-      skills: ["ABAP", "Fiori", "Data Dictionary", "BAPI"],
+        "Desarrollo y mantenimiento de reportes para seguimiento y control de procesos, integración de información entre sistemas, automatización de flujos de aprobación y notificación, soporte productivo, diseño de formularios, y participación en proyectos de facturación electrónica y nómina electrónica para distintos países.",
+      skills: ["ABAP", "Integración", "Workflow", "Formularios", "Facturación electrónica"],
     },
     {
-      title: "Soporte TI / Ingeniería de sistemas",
-      company: "Proyectos y soporte tecnológico",
-      period: "2018 - 2021",
+      title: "Practicante de Ciberseguridad OT",
+      company: "Henkel",
+      period: "Julio 2023 – Enero 2024",
       description:
-        "Soporte técnico, atención a usuarios, administración básica de sistemas y primeras experiencias en entornos empresariales, con base sólida en infraestructura, análisis y resolución de problemas.",
-      skills: ["SAP GUI", "SQL", "Soporte", "Infraestructura"],
+        "Apoyo en gestión de seguridad de la información y ciberseguridad en entornos de tecnología operativa (OT), con enfoque en fortalecimiento de procesos y prevención de riesgos.",
+      skills: ["Ciberseguridad", "OT", "Seguridad de la información", "Soporte"],
     },
   ];
 

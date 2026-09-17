@@ -56,10 +56,15 @@ export default function Header({ lang, setLang }: HeaderProps) {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-3">
         <motion.div
-          className="text-xl font-bold text-primary"
+          className="text-xl font-bold"
           whileHover={{ scale: 1.05 }}
         >
-          <a href="#home" className="font-semibold tracking-wider">CF</a>
+          <a
+            href="#home"
+            className="inline-block font-serif font-black tracking-[0.2em] text-transparent bg-gradient-to-r from-[#f5e7b5] via-[#d4af37] to-[#b88a2b] bg-clip-text"
+          >
+            CF
+          </a>
         </motion.div>
 
         <div className="hidden md:flex gap-6">

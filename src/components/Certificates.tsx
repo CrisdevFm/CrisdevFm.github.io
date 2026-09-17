@@ -79,50 +79,7 @@ export default function Certificates({ lang }: CertificatesProps) {
   }
 
   if (certificates.length === 0) {
-    return (
-      <section id="certificates" className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h2
-            className="text-4xl font-bold text-primary mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {labels.emptyTitle}
-          </motion.h2>
-          <motion.p
-            className="text-gray-600 mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {labels.emptyText}
-          </motion.p>
-          <motion.div
-            className="bg-white p-6 rounded-lg border-2 border-primary/30 inline-block"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <code className="text-primary font-bold text-sm md:text-base break-all">
-              public/certificates/
-            </code>
-          </motion.div>
-          <motion.p
-            className="text-gray-600 text-sm mt-6 max-w-xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {labels.emptySupport}
-          </motion.p>
-        </div>
-      </section>
-    );
+    return null;
   }
 
   return (

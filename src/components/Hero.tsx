@@ -99,7 +99,7 @@ export default function Hero({ lang }: HeroProps) {
         >
           <motion.a
             href="#projects"
-            className="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-dark transition-all shadow-md"
+            className="px-8 py-3 bg-primary text-dark font-bold rounded-lg hover:bg-[#f5d77b] transition-all shadow-md"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -108,7 +108,7 @@ export default function Hero({ lang }: HeroProps) {
 
           <motion.a
             href="#contact"
-            className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all"
+            className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -117,7 +117,7 @@ export default function Hero({ lang }: HeroProps) {
 
           <motion.a
             href="/cv/"
-            className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all"
+            className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

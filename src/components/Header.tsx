@@ -47,7 +47,7 @@ export default function Header({ lang, setLang }: HeaderProps) {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-primary/20 shadow-md"
+          ? "bg-[#0d0d0d]/90 backdrop-blur-md border-b border-primary/30 shadow-md"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -85,7 +85,7 @@ export default function Header({ lang, setLang }: HeaderProps) {
           <button
             type="button"
             onClick={() => setLang(lang === "es" ? "en" : "es")}
-            className="px-3 py-2 text-xs font-bold rounded-lg border border-primary text-primary bg-white/80 hover:bg-primary hover:text-white transition-all"
+            className="px-3 py-2 text-xs font-bold rounded-lg border border-primary text-primary bg-[#121212] hover:bg-primary hover:text-dark transition-all"
             aria-label="Toggle language"
           >
             {lang === "es" ? "EN" : "ES"}
@@ -95,7 +95,7 @@ export default function Header({ lang, setLang }: HeaderProps) {
             href="https://github.com/crisdevfm"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-primary text-dark font-bold rounded-lg hover:bg-accent transition-all"
+            className="px-4 py-2 bg-primary text-dark font-bold rounded-lg hover:bg-[#f5d77b] transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

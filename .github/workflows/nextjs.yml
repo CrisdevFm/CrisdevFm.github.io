@@ -5,9 +5,9 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the main branch and the black version branch
+  # Runs on pushes targeting the main branch only
   push:
-    branches: ["main", "version--2.0"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

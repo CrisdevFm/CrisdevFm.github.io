@@ -61,7 +61,7 @@ export default function About({ lang }: AboutProps) {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            className="space-y-6 text-gray-700"
+            className="space-y-6 text-gray-300"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -71,37 +71,37 @@ export default function About({ lang }: AboutProps) {
               <p className="text-lg font-semibold text-primary mb-2">
                 {content.profile}
               </p>
-              <p className="text-gray-600">{content.intro}</p>
+              <p className="text-gray-300">{content.intro}</p>
             </div>
 
-            <p className="text-gray-600 leading-relaxed">{content.paragraph1}</p>
-            <p className="text-gray-600 leading-relaxed">{content.paragraph2}</p>
+            <p className="text-gray-300 leading-relaxed">{content.paragraph1}</p>
+            <p className="text-gray-300 leading-relaxed">{content.paragraph2}</p>
 
             <div className="grid grid-cols-2 gap-4 mt-6">
-              <div className="bg-stone-100 p-3 rounded border-l-4 border-primary">
+              <div className="bg-[#121212] p-3 rounded border-l-4 border-primary">
                 <div className="text-sm font-semibold text-primary">{content.specialty}</div>
-                <div className="text-gray-700">SAP ABAP Development</div>
+                <div className="text-gray-300">SAP ABAP Development</div>
               </div>
-              <div className="bg-stone-100 p-3 rounded border-l-4 border-primary">
+              <div className="bg-[#121212] p-3 rounded border-l-4 border-primary">
                 <div className="text-sm font-semibold text-primary">{content.industry}</div>
-                <div className="text-gray-700">Energy & Technology</div>
+                <div className="text-gray-300">Energy & Technology</div>
               </div>
-              <div className="bg-stone-100 p-3 rounded border-l-4 border-primary">
+              <div className="bg-[#121212] p-3 rounded border-l-4 border-primary">
                 <div className="text-sm font-semibold text-primary">{content.company}</div>
-                <div className="text-gray-700">SLB (Schlumberger)</div>
+                <div className="text-gray-300">SLB (Schlumberger)</div>
               </div>
-              <div className="bg-stone-100 p-3 rounded border-l-4 border-primary">
+              <div className="bg-[#121212] p-3 rounded border-l-4 border-primary">
                 <div className="text-sm font-semibold text-primary">{content.location}</div>
-                <div className="text-gray-700">Colombia</div>
+                <div className="text-gray-300">Colombia</div>
               </div>
             </div>
 
-            <div className="mt-8 bg-stone-100 rounded-xl border border-primary/20 p-5">
+            <div className="mt-8 bg-[#121212] rounded-xl border border-primary/20 p-5">
               <p className="text-sm font-semibold text-primary mb-2">{content.resume}</p>
-              <p className="text-gray-600 mb-4">{content.resumeText}</p>
+              <p className="text-gray-300 mb-4">{content.resumeText}</p>
               <a
                 href="/cv/"
-                className="inline-flex items-center px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-dark transition-all"
+                className="inline-flex items-center px-4 py-2 bg-primary text-dark font-bold rounded-lg hover:bg-[#f5d77b] transition-all"
               >
                 {content.button}
               </a>
@@ -121,7 +121,7 @@ export default function About({ lang }: AboutProps) {
               transition={{ duration: 4, repeat: Infinity }}
             >
               <div className="absolute inset-0 bg-primary rounded-full blur-xl opacity-20" />
-              <div className="absolute inset-0 bg-white rounded-full flex items-center justify-center border-2 border-primary/30 shadow-lg">
+              <div className="absolute inset-0 bg-[#121212] rounded-full flex items-center justify-center border-2 border-primary/30 shadow-lg">
                 <div className="text-6xl">👨‍💻</div>
               </div>
             </motion.div>

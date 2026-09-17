@@ -29,7 +29,18 @@ export default function Contact({ lang }: ContactProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    const subject = encodeURIComponent(
+      formData.subject || "Contacto desde portfolio"
+    );
+    const body = encodeURIComponent(
+      `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
+    );
+
+    if (typeof window !== "undefined") {
+      window.location.href = `mailto:ccforerom@gmail.com?subject=${subject}&body=${body}`;
+    }
+
     setSubmitted(true);
     setTimeout(() => {
       setFormData({ name: "", email: "", subject: "", message: "" });

@@ -59,10 +59,7 @@ export default function Header({ lang, setLang }: HeaderProps) {
           className="text-xl font-bold"
           whileHover={{ scale: 1.05 }}
         >
-          <a
-            href="#home"
-            className="inline-block font-serif font-black tracking-[0.2em] text-transparent bg-gradient-to-r from-[#f5e7b5] via-[#d4af37] to-[#b88a2b] bg-clip-text"
-          >
+          <a href="#home" className="font-bold tracking-wider text-primary glow-text">
             CF
           </a>
         </motion.div>

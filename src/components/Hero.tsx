@@ -54,41 +54,51 @@ export default function Hero({ lang }: HeroProps) {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
       <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.14),_transparent_38%)]" />
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <motion.div
-        className="max-w-4xl mx-auto text-center px-4"
+        className="max-w-5xl mx-auto text-center px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.div
           variants={itemVariants}
-          className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/5 text-primary font-semibold text-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-primary/30 bg-[#101010] text-primary font-semibold text-sm shadow-[0_0_20px_rgba(212,175,55,0.15)]"
         >
           <span>⚙️</span>
           <span>{lang === "es" ? "Perfil enfocado en SAP" : "SAP-focused profile"}</span>
         </motion.div>
 
+        <motion.div
+          variants={itemVariants}
+          className="mb-6"
+        >
+          <div className="inline-block px-6 py-2 border border-primary/30 text-primary text-xs tracking-[0.35em] uppercase rounded-full bg-black/30">
+            CF
+          </div>
+        </motion.div>
+
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold mb-4 text-primary"
+          className="text-5xl md:text-7xl font-black tracking-tight mb-4 text-primary"
         >
           {content.headline}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-2xl md:text-3xl font-semibold text-primary mb-4"
+          className="text-2xl md:text-3xl font-semibold text-[#f5d77b] mb-4"
         >
           {content.subtitle}
         </motion.p>
 
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl"
+          className="text-lg md:text-xl text-[#e7dfc5] mb-8 max-w-3xl mx-auto leading-relaxed"
         >
           {content.description}
         </motion.p>
@@ -99,7 +109,7 @@ export default function Hero({ lang }: HeroProps) {
         >
           <motion.a
             href="#projects"
-            className="px-8 py-3 bg-primary text-dark font-bold rounded-lg hover:bg-[#f5d77b] transition-all shadow-md"
+            className="px-8 py-3 bg-primary text-dark font-bold rounded-lg hover:bg-[#f5d77b] transition-all shadow-[0_0_25px_rgba(212,175,55,0.2)]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -108,7 +118,7 @@ export default function Hero({ lang }: HeroProps) {
 
           <motion.a
             href="#contact"
-            className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark transition-all"
+            className="px-8 py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -117,7 +127,7 @@ export default function Hero({ lang }: HeroProps) {
 
           <motion.a
             href="/cv/"
-            className="px-8 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark transition-all"
+            className="px-8 py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

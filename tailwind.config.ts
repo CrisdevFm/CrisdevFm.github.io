@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#a89968",
-        dark: "#1a1a1a",
-        darker: "#0a0a0a",
-        accent: "#2a2a2a",
-        light: "#f9f8f6",
+        primary: "#d4af37",
+        dark: "#111111",
+        darker: "#000000",
+        accent: "#f5d77b",
+        light: "#f7f3ea",
       },
       backgroundImage: {
-        gradient: "linear-gradient(135deg, #a89968 0%, #8b8b8b 100%)",
+        gradient: "linear-gradient(135deg, #d4af37 0%, #f5d77b 100%)",
       },
     },
   },

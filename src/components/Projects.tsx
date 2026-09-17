@@ -35,18 +35,29 @@ export default function Projects({ lang }: ProjectsProps) {
               per_page: 12,
               type: "owner",
             },
+            headers: {
+              Accept: "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+            },
           }
         );
 
-        const filteredRepos = response.data.filter(
-          (repo: GitHubRepo) => repo.description && !(repo.archived ?? false)
-        );
+        const filteredRepos = Array.isArray(response.data)
+          ? response.data.filter(
+              (repo: GitHubRepo) => repo.description && !(repo.archived ?? false)
+            )
+          : [];
+
+        if (filteredRepos.length === 0) {
+          throw new Error("No public repositories available");
+        }
 
         setProjects(filteredRepos);
+        setError(null);
       } catch (err) {
         console.error("Error fetching GitHub projects:", err);
-        setError(lang === "es" ? "No se pudieron cargar los proyectos de GitHub" : "GitHub projects could not be loaded");
-        setProjects(getDemoProjects(lang));
+        setProjects(getFallbackProjects(lang));
+        setError(null);
       } finally {
         setLoading(false);
       }
@@ -198,34 +209,31 @@ export default function Projects({ lang }: ProjectsProps) {
   );
 }
 
-function getDemoProjects(lang: "es" | "en"): GitHubRepo[] {
+function getFallbackProjects(lang: "es" | "en"): GitHubRepo[] {
   return [
     {
       id: 1,
       name: "CrisdevFm.github.io",
-      description: lang === "es" ? "Portfolio interactivo personal" : "Interactive personal portfolio",
-      html_url: "https://github.com/crisdevfm/crisdevfm.github.io",
-      stargazers_count: 5,
+      description:
+        lang === "es"
+          ? "Portfolio personal con perfil profesional, CV y certificaciones."
+          : "Personal portfolio with professional profile, CV, and certifications.",
+      html_url: "https://github.com/CrisdevFm/CrisdevFm.github.io",
+      stargazers_count: 0,
       language: "TypeScript",
       topics: ["portfolio", "nextjs", "tailwindcss"],
     },
     {
       id: 2,
-      name: "E-Commerce Platform",
-      description: lang === "es" ? "Plataforma de comercio electrónico con carrito dinámico" : "E-commerce platform with dynamic shopping cart",
-      html_url: "#",
-      stargazers_count: 12,
-      language: "React",
-      topics: ["ecommerce", "react", "nodejs"],
-    },
-    {
-      id: 3,
-      name: "Task Manager App",
-      description: lang === "es" ? "Aplicación de gestión de tareas con autenticación" : "Task management app with authentication",
-      html_url: "#",
-      stargazers_count: 8,
-      language: "Next.js",
-      topics: ["productivity", "full-stack", "mongodb"],
+      name: "GitHub Profile",
+      description:
+        lang === "es"
+          ? "Perfil público con código, proyectos y evolución profesional."
+          : "Public profile with code, projects and professional growth.",
+      html_url: "https://github.com/CrisdevFm",
+      stargazers_count: 0,
+      language: "GitHub",
+      topics: ["profile", "projects", "developer"],
     },
   ];
 }
